@@ -1,20 +1,19 @@
 {
   "compilerOptions": {
-  
-    "target": "es2020",                        
-    "module": "commonjs",          
-    "rootDir": "src",   
-    "outDir": "dist",  
-    "moduleResolution": "node",    
-    "esModuleInterop": true,                         
+    "target": "es2020",
+    "module": "commonjs",
+  "rootDir": "g:/LMS project",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true,
-     "sourceMap": true,
-      "resolveJsonModule": true,          // allow importing JSON files
-    "noImplicitAny": true,              // catch variables without types
-    "strictNullChecks": true,           // enforce null/undefined checks    
+    "sourceMap": true,
+    "resolveJsonModule": true, // allow importing JSON files
+    "noImplicitAny": true, // catch variables without types
+    "strictNullChecks": true // enforce null/undefined checks
   },
-  "include": ["src"],                 
-  "exclude": ["node_modules", "dist"]   
+  "include": ["src", "config", "middleware", "utils", "types"],
+  "exclude": ["node_modules", "dist"]
 }

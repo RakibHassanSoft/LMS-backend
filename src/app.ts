@@ -2,6 +2,8 @@ import express,{ Application, Request, Response } from "express";
 import { prisma } from "./prisma";
 import morgan from "morgan";
 import routes from "./globale.routes";
+import { globalErrorHandler } from "../middleware/globalErrorHandler";
+import { notFoundHandler } from "../middleware/notFound";
 const app : Application = express();
 
 app.use(express.json());
@@ -9,11 +11,13 @@ app.use(morgan("dev"));
 
 // All routes now prefixed with /api
 app.use("/api/v1", routes); 
-// app.use((req, res, next) => {
-//     console.log("Incoming request:", req);
-//     next();
-// });
 
+
+// Handle wrong URLs
+app.use(notFoundHandler);
+
+// Must be last
+app.use(globalErrorHandler);
 app.get("/",(req : Request,res : Response)=>{
     res.send("Hello World");
 });

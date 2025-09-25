@@ -19,7 +19,7 @@ export const authenticate = (
       role: string;
     };
     req.user = decoded;
-    console.log(req);
+
     next();
   } catch (err) {
     res.status(401).json({ error: "Invalid token" });
